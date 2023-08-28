@@ -110,9 +110,11 @@ const ProductScreen = ({ navigation }) => {
               <Button
                 title="Get Invoice PDF"
                 onPress={() => handleGeneratePDF(product._id)}
+                style={{ margin: 3 }}
               />
               <Button
                 title="View all products"
+                style={{ margin: 3 }}
                 onPress={() =>
                   navigation.navigate("invoice", { productId: product._id })
                 }

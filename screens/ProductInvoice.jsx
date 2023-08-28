@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   card: {
-    padding: 1,
+    padding: 2,
     margin: 16,
     borderWidth: 1,
     borderColor: "#ccc",
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   image: {
-    width: "100%",
+    width: "90%",
     height: 100,
     resizeMode: "cover",
     borderRadius: 10,

@@ -13,7 +13,7 @@ const ProductDetailScreen = ({ route }) => {
       const value = await AsyncStorage.getItem("token")
       console.log(productId)
       const invoice = await axios.get(
-        `http://localhost:3900/api/invoices/quotations/${productId}`,
+        `https://freelance-api-2.onrender.com/api/invoices/quotations/${productId}`,
         {
           headers: {
             "x-auth-token": value,
@@ -34,7 +34,9 @@ const ProductDetailScreen = ({ route }) => {
             <Text style={styles.cardTitle}> Product {index + 1}</Text>
             <View style={styles.imageContainer}>
               <Image
-                source={{ uri: `http://localhost:3900/${prod._id}` }}
+                source={{
+                  uri: `https://freelance-api-2.onrender.com/${prod._id}`,
+                }}
                 style={styles.image}
                 resizeMode="cover"
               />

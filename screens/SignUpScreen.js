@@ -21,7 +21,7 @@ const SignUpScreen = ({ navigation }) => {
   const handleGetOtp = async ({ navigation }) => {
     try {
       const response = await axios.post(
-        "https://freelance-api-2.onrender.com/api/verify/send",
+        "https://freelance-api-1.onrender.com/api/verify/send",
         {
           phoneNumber: phoneNumber,
         }
@@ -36,7 +36,7 @@ const SignUpScreen = ({ navigation }) => {
   const handleSignUp = async () => {
     try {
       const response = await axios.post(
-        "https://freelance-api-2.onrender.com/api/users",
+        "https://freelance-api-1.onrender.com/api/users",
         {
           sessionId: sessionId,
           otp: otp,

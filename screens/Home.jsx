@@ -30,7 +30,7 @@ const HomeScreen = () => {
   const handleSubmit = async () => {
     const value = await AsyncStorage.getItem("token")
     const response = await axios.post(
-      "https://freelance-api-2.onrender.com/api/invoices/quotation",
+      "https://freelance-api-1.onrender.com/api/invoices/quotation",
       {
         products: selectedProducts,
         quantity: quantity,
@@ -51,11 +51,14 @@ const HomeScreen = () => {
   const fetchProducts = async () => {
     try {
       const value = await AsyncStorage.getItem("token")
-      const response = await axios.get("https://freelance-api-2.onrender.com/api/invoices/", {
-        headers: {
-          "x-auth-token": value,
-        },
-      })
+      const response = await axios.get(
+        "https://freelance-api-1.onrender.com/api/invoices/",
+        {
+          headers: {
+            "x-auth-token": value,
+          },
+        }
+      )
       setProducts(response.data)
     } catch (error) {
       console.error("Error fetching products:", error)
@@ -69,7 +72,7 @@ const HomeScreen = () => {
           <View style={styles.card} key={product._id}>
             <Image
               source={{
-                uri: `https://freelance-api-2.onrender.com/${product._id}`, // Replace with the correct URL
+                uri: `https://freelance-api-1.onrender.com/${product._id}`, // Replace with the correct URL
               }}
               style={styles.image}
               resizeMode="cover" // Choose the appropriate resizeMode

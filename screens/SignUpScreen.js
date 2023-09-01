@@ -21,7 +21,7 @@ const SignUpScreen = ({ navigation }) => {
   const handleGetOtp = async ({ navigation }) => {
     try {
       const response = await axios.post(
-        "https://freelance-api-1.onrender.com/api/verify/send",
+        "http://localhost:3900/api/verify/send",
         {
           phoneNumber: phoneNumber,
         }
@@ -35,16 +35,13 @@ const SignUpScreen = ({ navigation }) => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post(
-        "https://freelance-api-1.onrender.com/api/users",
-        {
-          sessionId: sessionId,
-          otp: otp,
-          name,
-          email,
-          password,
-        }
-      )
+      const response = await axios.post("http://localhost:3900/api/users", {
+        sessionId: sessionId,
+        otp: otp,
+        name,
+        email,
+        password,
+      })
       await AsyncStorage.setItem("token", response.data.token)
 
       navigation.navigate("Home")

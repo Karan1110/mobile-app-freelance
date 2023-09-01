@@ -15,13 +15,10 @@ const SignIn = ({ navigation }) => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post(
-        "https://freelance-api-1.onrender.com/api/auth",
-        {
-          email,
-          password,
-        }
-      )
+      const response = await axios.post("http://localhost:3900/api/auth", {
+        email,
+        password,
+      })
 
       await AsyncStorage.setItem("token", response.data.token)
 

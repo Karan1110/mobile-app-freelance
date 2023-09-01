@@ -18,7 +18,7 @@ const ProductScreen = ({ navigation }) => {
   const handleGeneratePDF = async (id) => {
     try {
       const response = await axios.get(
-        `https://freelance-api-1.onrender.com/api/invoices/generate-pdf/${id}`,
+        `http://localhost:3900/api/invoices/generate-pdf/${id}`,
         {
           responseType: "blob",
         }
@@ -56,7 +56,7 @@ const ProductScreen = ({ navigation }) => {
       console.log("tokn here", value)
 
       const response = await fetch(
-        "https://freelance-api-1.onrender.com/api/invoices/quotations",
+        "http://localhost:3900/api/invoices/quotations",
         {
           headers: {
             "x-auth-token": value,
@@ -95,7 +95,7 @@ const ProductScreen = ({ navigation }) => {
                 <View style={styles.productContainer} key={prod._id}>
                   <Image
                     source={{
-                      uri: `https://freelance-api-1.onrender.com/${prod._id}`,
+                      uri: `http://localhost:3900/${prod._id}`,
                     }}
                     style={styles.image}
                     resizeMode="cover"

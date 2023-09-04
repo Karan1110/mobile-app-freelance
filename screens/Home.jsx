@@ -39,7 +39,7 @@ const HomeScreen = () => {
             : `dislike/${product._id}`
 
           // Make the fetch request
-          fetch(`http://localhost:3900/api/invoices/${endpoint}`, {
+          fetch(`https://e-com-api-2por.onrender.com/api/invoices/${endpoint}`, {
             method: "PUT",
             headers: {
               "x-auth-token": value,
@@ -64,7 +64,7 @@ const HomeScreen = () => {
   const handleSubmit = async () => {
     const value = await AsyncStorage.getItem("token")
     const response = await axios.post(
-      "http://localhost:3900/api/invoices/quotation",
+      "https://e-com-api-2por.onrender.com/api/invoices/quotation",
       {
         products: selectedProducts,
         quantity: quantity,
@@ -86,7 +86,7 @@ const HomeScreen = () => {
   const fetchProducts = async () => {
     try {
       const value = await AsyncStorage.getItem("token")
-      const response = await axios.get("http://localhost:3900/api/invoices/", {
+      const response = await axios.get("https://e-com-api-2por.onrender.com/api/invoices/", {
         headers: {
           "x-auth-token": value,
         },
@@ -105,7 +105,7 @@ const HomeScreen = () => {
             <View style={styles.card} key={product._id}>
               <Image
                 source={{
-                  uri: `http://localhost:3900/${product._id}`, // Replace with the correct URL
+                  uri: `https://e-com-api-2por.onrender.com/${product._id}`, // Replace with the correct URL
                 }}
                 style={styles.image}
                 resizeMode="cover" // Choose the appropriate resizeMode
